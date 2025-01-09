@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= category %> Menu</title>
+</head>
+<body>
+    <h1>Menu Items for <%= category %></h1>
+    <% if (items.length > 0) { %>
+        <ul>
+            <% items.forEach(item => { %>
+                <li>
+                    <h2><%= item.name %></h2>
+                    <p><strong>Price:</strong> $<%= item.price.toFixed(2) %></p>
+                    <p><strong>Rating:</strong> <%= item.rating %>/5</p>
+                    <p><strong>Details:</strong> <%= item.details %></p>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No items available for this category.</p>
+    <% } %>
+</body>
+</html>
